@@ -1,0 +1,9 @@
+[package]
+name = "curlbox"
+edition.workspace = true
+license-file.workspace = true
+version.workspace = true
+
+[dependencies]
+avian2d.workspace = true
+bevy.workspace = true

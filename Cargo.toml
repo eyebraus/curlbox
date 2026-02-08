@@ -1,0 +1,28 @@
+[workspace]
+members = ["curlbox"]
+resolver = "3"
+
+[workspace.package]
+edition = "2024"
+license-file = "LICENSE"
+version = "0.1.0"
+
+[workspace.dependencies]
+anyhow = "1.0.100"
+avian2d = "0.5"
+bevy = "0.18.0"
+serde = { version = "1.0.228", features = ["derive"] }
+serde_yml = { version = "0.0.12" }
+thiserror = { version = "2.0.18" }
+
+[workspace.lints.clippy]
+pedantic = "warn"
+
+# Configuring build per Bevy recommendations
+# https://bevy.org/learn/quick-start/getting-started/setup/#compile-with-performance-optimizations
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3
+
